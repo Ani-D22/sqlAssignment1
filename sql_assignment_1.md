@@ -180,8 +180,8 @@ Query11:
 
 ```
 select
-	count(o.order_id),
-    os.CHANGE_REASON
+	count(o.order_id) as total_orders,
+    os.CHANGE_REASON as cancellation_reason
 from order_header o
 inner join order_status os
 on o.order_id=os.order_id
