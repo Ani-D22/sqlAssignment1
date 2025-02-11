@@ -1,6 +1,6 @@
 **Assignment Link: https://github.com/saastechacademy/foundation/blob/main/udm/intermediate/sql-assignment/sql-assignment-1.md**
 
-**Query 1:**
+**Query 1:** https://github.com/saastechacademy/foundation/blob/main/udm/intermediate/sql-assignment/sql-assignment-1.md#1-new-customers-acquired-in-june-2023
 
 ```
 SELECT 
