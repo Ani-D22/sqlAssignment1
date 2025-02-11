@@ -179,14 +179,15 @@ Query10:
 Query11:
 
 ```
-select
-	count(o.order_id) as total_orders,
-    os.CHANGE_REASON as cancellation_reason
-from order_header o
-inner join order_status os
-on o.order_id=os.order_id
-where o.order_date between '2024-12-01 00:00:01' and '2024-12-31 23:59:59'
-and o.status_id = 'ORDER_CANCELLED' group by os.CHANGE_REASON;
+SELECT  
+	COUNT(oh.ORDER_ID) AS TOTAL_ORDERS, 
+	os.CHANGE_REASON AS CANCELATION_REASON
+FROM order_header oh 
+JOIN Order_Status os ON oh.order_id= os.order_id 
+WHERE os.status_id='ORDER_CANCELLED'  
+AND oh.order_date >'2024-12-01' 
+AND oh.order_date <'2024-12-31'
+GROUP BY os.CHANGE_REASON;
 ```
 
 -----------------------------------------------------------------------
