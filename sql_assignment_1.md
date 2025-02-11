@@ -186,7 +186,11 @@ from order_header o
 inner join order_status os
 on o.order_id=os.order_id
 where o.order_date between '2024-12-01 00:00:01' and '2024-12-31 23:59:59'
-and o.status_id = 'ORDER_CANCELLED' and CHANGE_REASON_ENUM_ID is not null;
+and o.status_id = 'ORDER_CANCELLED' and CHANGE_REASON is not null
+group by o.order_id;
+
+select * from order_item_assoc;
+desc order_item_assoc;
 ```
 
 -----------------------------------------------------------------------
