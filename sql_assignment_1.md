@@ -181,7 +181,7 @@ Query11:
 ```
 select
 	count(o.order_id),
-    os.CHANGE_REASON_ENUM_ID
+    os.CHANGE_REASON
 from order_header o
 inner join order_status os
 on o.order_id=os.order_id
