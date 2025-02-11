@@ -178,7 +178,8 @@ Query10:
 
 Query11:
 
-```select
+```
+select
 	count(o.order_id),
     os.CHANGE_REASON
 from order_header o
