@@ -8,12 +8,12 @@ The marketing team ran a campaign in June 2023 and wants to see how many new cus
 
 Fields to Retrieve:
 
-PARTY_ID
-FIRST_NAME
-LAST_NAME
-EMAIL
-PHONE
-ENTRY_DATE
+  - PARTY_ID
+  - FIRST_NAME
+  - LAST_NAME
+  - EMAIL
+  - PHONE
+  - ENTRY_DATE
 
 ```
 SELECT 
@@ -50,9 +50,9 @@ Merchandising teams often need a list of all physical products to manage logisti
 
 Fields to Retrieve:
 
-PRODUCT_ID
-PRODUCT_TYPE_ID
-INTERNAL_NAME
+  - PRODUCT_ID
+  - PRODUCT_TYPE_ID
+  - INTERNAL_NAME
 
 ```
 select distinct
@@ -82,10 +82,10 @@ A product cannot sync to NetSuite unless it has a valid NetSuite ID. The OMS nee
 
 Fields to Retrieve:
 
-PRODUCT_ID
-INTERNAL_NAME
-PRODUCT_TYPE_ID
-NETSUITE_ID (or similar field indicating the NetSuite ID; may be NULL or empty if missing)
+  - PRODUCT_ID
+  - INTERNAL_NAME
+  - PRODUCT_TYPE_ID
+  - NETSUITE_ID (or similar field indicating the NetSuite ID; may be NULL or empty if missing)
 
 ```
 select distinct
@@ -114,10 +114,10 @@ To sync an order or product across multiple systems (e.g., Shopify, HotWax, ERP/
 
 Fields to Retrieve:
 
-PRODUCT_ID (internal OMS ID)
-SHOPIFY_ID
-HOTWAX_ID
-ERP_ID or NETSUITE_ID (depending on naming)
+  - PRODUCT_ID (internal OMS ID)
+  - SHOPIFY_ID
+  - HOTWAX_ID
+  - ERP_ID or NETSUITE_ID (depending on naming)
 
 ```
 SELECT 
@@ -146,18 +146,17 @@ After running similar reports for a previous month, you now need all completed o
 
 Fields to Retrieve:
 
-PRODUCT_ID
-PRODUCT_TYPE_ID
-PRODUCT_STORE_ID
-TOTAL_QUANTITY
-INTERNAL_NAME
-FACILITY_ID
-EXTERNAL_ID
-FACILITY_TYPE_ID
-ORDER_HISTORY_ID
-ORDER_ID
-ORDER_ITEM_SEQ_ID
-SHIP_GROUP_SEQ_ID
+  - PRODUCT_ID
+  - PRODUCT_TYPE_ID
+  - PRODUCT_STORE_ID
+  - TOTAL_QUANTITY
+  - INTERNAL_NAME
+  - FACILITY_ID
+  - EXTERNAL_ID
+  - FACILITY_TYPE_ID
+  - ORDER_HISTORY_ID
+  - ORDER_ITEM_SEQ_ID
+  - SHIP_GROUP_SEQ_ID
 
 //tbd
 
@@ -166,7 +165,8 @@ SHIP_GROUP_SEQ_ID
 Query 6:
 //does not exist
 
------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
 
 Query 7:
 
@@ -176,10 +176,10 @@ Finance teams need to see new orders and their payment methods for reconciliatio
 
 Fields to Retrieve:
 
-ORDER_ID
-TOTAL_AMOUNT
-PAYMENT_METHOD
-Shopify Order ID (if applicable)
+  - ORDER_ID
+  - TOTAL_AMOUNT
+  - PAYMENT_METHOD
+  - Shopify Order ID (if applicable)
 
 ```
 SELECT
@@ -198,16 +198,16 @@ limit 500;
 
 Query 8:
 
-8 Payment Captured but Not Shipped
-Business Problem:
-Finance teams want to ensure revenue is recognized properly. If payment is captured but no shipment has occurred, it warrants further review.
+  - 8 Payment Captured but Not Shipped
+  - Business Problem:
+  - Finance teams want to ensure revenue is recognized properly. If payment is captured but no shipment has occurred, it warrants further review.
 
 Fields to Retrieve:
 
-ORDER_ID
-ORDER_STATUS
-PAYMENT_STATUS
-SHIPMENT_STATUS
+  - ORDER_ID
+  - ORDER_STATUS
+  - PAYMENT_STATUS
+  - SHIPMENT_STATUS
 
 ```
 SELECT 
@@ -233,8 +233,8 @@ Operations teams may want to see how orders complete across the day to schedule 
 
 Fields to Retrieve:
 
-TOTAL ORDERS
-HOUR
+  - TOTAL ORDERS
+  - HOUR
 
 ```
 SELECT
@@ -256,8 +256,8 @@ BOPIS (Buy Online, Pickup In Store) is a key retail strategy. Finance wants to k
 
 Fields to Retrieve:
 
-TOTAL ORDERS
-TOTAL REVENUE
+  - TOTAL ORDERS
+  - TOTAL REVENUE
 
 ```
 SELECT  
@@ -284,8 +284,8 @@ The merchandising team needs to know how many orders were canceled in the previo
 
 Fields to Retrieve:
 
-TOTAL ORDERS
-CANCELATION REASON
+  - TOTAL ORDERS
+  - CANCELATION REASON
 
 ```
 SELECT  
@@ -308,10 +308,9 @@ Business Problem The retailer has set a threshild value for products that are so
 
 Fields to Retrieve:
 
-PRODUCT ID
-THRESHOLD
+  - PRODUCT ID
+  - THRESHOLD
 
 //tbd
 
 -----------------------------------------------------------------------
-
