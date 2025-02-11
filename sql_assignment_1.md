@@ -172,7 +172,21 @@ group by hour(o.order_date);
 -----------------------------------------------------------------------
 
 Query10:
-//tbd
+
+```
+SELECT  
+	COUNT(o.order_id) as TOTAL_ORDERS, 
+    SUM(o.grand_Total)  
+FROM order_header o
+JOIN order_shipment os 
+ON o.order_id=os.order_id 
+JOIN shipment s
+ON os.SHIPMENT_ID=s.SHIPMENT_ID  
+WHERE o.SALES_CHANNEL_ENUM_ID='WEB_SALES_CHANNEL' 
+AND s.SHIPMENT_METHOD_TYPE_ID='STOREPICKUP' 
+AND o.order_date >='2024-01-01' 
+AND o.order_date <'2025-01-01';
+```
 
 -----------------------------------------------------------------------
 
@@ -196,11 +210,4 @@ Query12:
 //tbd
 
 -----------------------------------------------------------------------
-
-
-
-
-
-
-
 
