@@ -2,7 +2,7 @@
 
 **Query 1:**
 
-1 New Customers Acquired in June 2023
+New Customers Acquired in June 2023
 Business Problem:
 The marketing team ran a campaign in June 2023 and wants to see how many new customers signed up during that period.
 
@@ -44,7 +44,7 @@ WHERE
 
 **Query 2:**
 
-2 List All Active Physical Products
+List All Active Physical Products
 Business Problem:
 Merchandising teams often need a list of all physical products to manage logistics, warehousing, and shipping.
 
@@ -76,7 +76,7 @@ where pt.is_physical='Y';
 
 **Query 3:**
 
-3 Products Missing NetSuite ID
+Products Missing NetSuite ID
 Business Problem:
 A product cannot sync to NetSuite unless it has a valid NetSuite ID. The OMS needs a list of all products that still need to be created or updated in NetSuite.
 
@@ -108,7 +108,7 @@ and gi.ID_VALUE is null;
 -----------------------------------------------------------------------
 
 **Query 4:**
-4 Product IDs Across Systems
+Product IDs Across Systems
 Business Problem:
 To sync an order or product across multiple systems (e.g., Shopify, HotWax, ERP/NetSuite), the OMS needs to know each system’s unique identifier for that product. This query retrieves the Shopify ID, HotWax ID, and ERP ID (NetSuite ID) for all products.
 
@@ -140,7 +140,7 @@ GROUP BY gi.product_id;
 
 **Query 5:**
 
-5 Completed Orders in August 2023
+Completed Orders in August 2023
 Business Problem:
 After running similar reports for a previous month, you now need all completed orders in August 2023 for analysis.
 
@@ -170,7 +170,7 @@ Query 6:
 
 Query 7:
 
-7 Newly Created Sales Orders and Payment Methods
+Newly Created Sales Orders and Payment Methods
 Business Problem:
 Finance teams need to see new orders and their payment methods for reconciliation and fraud checks.
 
@@ -198,9 +198,9 @@ limit 500;
 
 Query 8:
 
-  - 8 Payment Captured but Not Shipped
-  - Business Problem:
-  - Finance teams want to ensure revenue is recognized properly. If payment is captured but no shipment has occurred, it warrants further review.
+Payment Captured but Not Shipped
+Business Problem:
+Finance teams want to ensure revenue is recognized properly. If payment is captured but no shipment has occurred, it warrants further review.
 
 Fields to Retrieve:
 
@@ -227,7 +227,7 @@ WHERE
 
 Query 9:
 
-9 Orders Completed Hourly
+Orders Completed Hourly
 Business Problem:
 Operations teams may want to see how orders complete across the day to schedule staffing.
 
@@ -250,7 +250,7 @@ group by hour(o.order_date);
 
 Query 10:
 
-10 BOPIS Orders Revenue (Last Year)
+BOPIS Orders Revenue (Last Year)
 Business Problem:
 BOPIS (Buy Online, Pickup In Store) is a key retail strategy. Finance wants to know the revenue from BOPIS orders for the previous year.
 
@@ -278,7 +278,7 @@ AND o.order_date <'2025-01-01';
 
 Query 11:
 
-11 Canceled Orders (Last Month)
+Canceled Orders (Last Month)
 Business Problem:
 The merchandising team needs to know how many orders were canceled in the previous month and their reasons.
 
@@ -303,7 +303,7 @@ GROUP BY os.CHANGE_REASON;
 
 Query 12:
 
-12 Product Threshold Value
+Product Threshold Value
 Business Problem The retailer has set a threshild value for products that are sold online, in order to avoid over selling.
 
 Fields to Retrieve:
